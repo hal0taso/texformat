@@ -1,0 +1,139 @@
+%!TEX platex=1
+\documentclass[11pt,xcolor=dvipsnames,table,dvipdfmx]{beamer}
+\usepackage{amsmath, amssymb}
+\usepackage{latexsym}
+\usepackage{ascmac}
+\usepackage{bm}
+
+%Beamerの設定
+\usetheme{Boadilla}
+%Beamerフォント設定
+\usepackage{txfonts} % TXフォント
+
+% VVVVVVVVVV an error has occured VVVVVVVVVV
+%\usepackage[deluxe]{otf} % 日本語多ウェイト化 
+% AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+\renewcommand{\familydefault}{\sfdefault}  % 英文をサンセリフ体に
+\renewcommand{\kanjifamilydefault}{\gtdefault}  % 日本語をゴシック体に
+\usefonttheme{professionalfonts}
+\setbeamerfont{alerted text}{series=\bfseries} % Alertを太字
+\setbeamerfont{section in toc}{series=\mdseries} % 目次は太字にしない
+\setbeamerfont{frametitle}{size=\Large} % フレームタイトル文字サイズ
+\setbeamerfont{title}{size=\LARGE} % タイトル文字サイズ
+\setbeamerfont{date}{size=\small}  % 日付文字サイズ
+
+%Beamer色設定
+\definecolor{UniBlue}{RGB}{0,150,200} 
+\definecolor{AlertOrange}{RGB}{255,76,0}
+\definecolor{AlmostBlack}{RGB}{38,38,38}
+\setbeamercolor{normal text}{fg=AlmostBlack}  % 本文カラー
+\setbeamercolor{structure}{fg=UniBlue} % 見出しカラー
+\setbeamercolor{block title}{fg=UniBlue!50!black} % ブロック部分タイトルカラー
+\setbeamercolor{alerted text}{fg=AlertOrange} % \alert 文字カラー
+\mode<beamer>{
+    \definecolor{BackGroundGray}{RGB}{254,254,254}
+    \setbeamercolor{background canvas}{bg=BackGroundGray} % スライドモードのみ背景をわずかにグレーにする
+}
+
+%フラットデザイン化
+\setbeamertemplate{blocks}[rounded] % Blockの影を消す
+\useinnertheme{circles} % 箇条書きをシンプルに
+\setbeamertemplate{navigation symbols}{} % ナビゲーションシンボルを消す
+\setbeamertemplate{footline}[frame number] % フッターはスライド番号のみ
+
+%タイトルページ
+\setbeamertemplate{title page}{%
+    \vspace{2.5em}
+    {\usebeamerfont{title} \usebeamercolor[fg]{title} \inserttitle \par}
+    {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle \par}
+    \vspace{1.5em}
+    \begin{flushright}
+        \usebeamerfont{author}\insertauthor\par
+        \usebeamerfont{institute}\insertinstitute \par
+        \vspace{3em}
+        \usebeamerfont{date}\insertdate\par
+        \usebeamercolor[fg]{titlegraphic}\inserttitlegraphic
+    \end{flushright}
+}
+
+% graphicx.sty
+\usepackage{graphicx}
+
+%
+\def\qed{\hfill $\Box$}
+
+\AtBeginSection[]{
+    \frame{\tableofcontents[currentsection, hideallsubsections]} %目次スライド
+}
+
+%タイトル
+\title{title is here}
+\author{\textbf{Name is Here}}
+\date{2017/6/21}
+\institute{github.com}
+
+\begin{document}
+\maketitle
+
+\section{section 1}
+\begin{frame}{Last month}
+ \begin{itemize}
+  \item item1
+ \end{itemize}
+\end{frame}
+
+\section{section 2}
+\begin{frame}{Frame title is here}
+ \begin{block}{block title}
+  contents
+ \end{block}
+ you can write some sentences here
+\end{frame}
+
+\begin{frame}{figure can set one slide}
+ \begin{figure}
+  \caption{figure 1}
+  \centering
+  %\includegraphics[width=6cm]{figure1.png}\vspace{0.5cm}
+ \end{figure}
+ \begin{figure}
+  \caption{figure 2}
+  \centering
+  %\includegraphics[width=6cm]{figure2.png}\vspace{0.5cm}
+ \end{figure}
+\end{frame}
+
+
+\begin{frame}{frame name}
+ \begin{block}{block name}
+  write sentences
+  \begin{enumerate}
+   \item item 1 \\
+   \item item 2 \\
+         contents of item 2
+  \end{enumerate}
+ \end{block}
+ \begin{itemize}
+  \item item 1 \\
+  \item item 2 \\
+ \end{itemize}
+ $\rightarrow$ you can set item in block
+\end{frame}
+
+\section{section 3}
+\begin{frame}{today}
+ TODO:
+ \begin{itemize}
+  \item sleep
+ \end{itemize}
+\end{frame}
+
+\section{section 4}
+\begin{frame}{Reference}
+ \begin{thebibliography}{9}
+  \bibitem{1}
+	  \small{reference}
+ \end{thebibliography}
+\end{frame}
+
+\end{document}
